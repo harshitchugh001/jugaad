@@ -8,6 +8,9 @@ const BookingSchema = new mongoose.Schema({
   },
   date: {
     type: String
+  },
+  user:{
+    type:String
   }
 });
 

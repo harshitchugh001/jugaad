@@ -1,13 +1,14 @@
 const Booking = require("../models/Booking");
 const crypto = require("crypto");
 const createBooking = async (req, res) => {
-  const { date } = req.body;
+  const { date, user} = req.body;
 
   const id = crypto.randomBytes(5).toString("hex");
 
   const booking = await Booking.create({
     id,
-    date
+    date,
+    user
   });
 
   res.json({error:201, message: "Room Booked Successfully" });
